@@ -1,13 +1,19 @@
 .row{
-    height: 50px;
+    height: 75px;
 }
 
 .col-1{
     border: 1px solid black;
 }
 
+.col-1.save{
+    border: 1px solid black;
+    background-color: lightskyblue;
+}
+
 .col-10{
     border: 1px solid black;
+    background-color: lightgray;
 }
 
 h1{
