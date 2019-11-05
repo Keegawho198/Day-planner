@@ -18,8 +18,17 @@ $("#date").html(m.format("dddd MMM Mo YYYY")); //sets the date using the Moment.
 // console.log(endTime.toDate()); // Mon May 12 2014 09:00:00
 
 
+var saveBtn = $("#saveBtn");
+//saveBtn.append(newButton);
+
+//the following code makes sure that the save button is clicked
+$("#saveBtn").on("click", function() {
+  console.log("button pressed");
+});
 
 
 
-//How do I add a input in the text content?
+//How do i have multilple saves that all click? rn just have one that can click, shows result in console.log.
+//can savebtn be universal?
+
 //how do I get the time to compare with moment.js?
