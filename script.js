@@ -1,5 +1,6 @@
 //var timerElement = document.getElementById('timer');
 
+var savedTasks = [];
 
 var m = moment(); //makes it easier to type this 
 
@@ -24,11 +25,34 @@ var saveBtn = $("#saveBtn");
 //the following code makes sure that the save button is clicked
 $("#saveBtn").on("click", function() {
   console.log("button pressed");
+  localStorage.setItem("todo-text", value="todo-text");  //should store input into the local stoarge.
 });
 
+localStorage.setItem("Name", "Keegan");
+
+// function action() {
+//   window.localStorage['todo-text'] = document.getElementById('todo-text').value;
+// }
+
+// $('#saveBtn').on('click', function(){
+
+//   $('input[type="text"]').each(function(){    
+//       var id = $(this).attr('id');
+//       var value = $(this).val();
+//      localStorage.setItem(id, value);
+
+//   });   
+// });
 
 
 //How do i have multilple saves that all click? rn just have one that can click, shows result in console.log.
 //can savebtn be universal?
 
 //how do I get the time to compare with moment.js?
+
+
+
+
+
+
+
