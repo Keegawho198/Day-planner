@@ -23,12 +23,28 @@ var saveBtn = $("#saveBtn");
 //saveBtn.append(newButton);
 
 //the following code makes sure that the save button is clicked
-$("#saveBtn").on("click", function() {
+$(".saveBtn").on("click", function() {
   console.log("button pressed");
-  localStorage.setItem("todo-text", value="todo-text");  //should store input into the local stoarge.
+  //var todoItem = "test";
+  var todoItem  = $(this).attr("data-time");
+  var textItem = $(this).attr("text");
+
+  localStorage.setItem(todoItem, textItem);  //should store input into the local stoarge.
+
+  
+ // var movieName = $(this).attr("data-name");
+
+
 });
 
-localStorage.setItem("Name", "Keegan");
+//localStorage.setItem("Name", "Keegan");
+
+//this.attr or this.data
+
+
+//queryselector
+//document.querySelector("#mytextinput").textContent
+
 
 // function action() {
 //   window.localStorage['todo-text'] = document.getElementById('todo-text').value;
@@ -50,9 +66,21 @@ localStorage.setItem("Name", "Keegan");
 
 //how do I get the time to compare with moment.js?
 
+//refer to activity 8 line 40
 
 
+//register click event on all btn class (all btns have same class)
+//link the button to its respective input and get the text
+//once you have value, save it to local storage
+//see if you can change this data type to be array of object
+//stringify whike saving parse when extracting
 
+
+// $(".yourButtonClass").on('click', function(event){
+//   event.stopPropagation();
+//   event.stopImmediatePropagation();
+//   //(... rest of your JS code)
+// });
 
 
 
