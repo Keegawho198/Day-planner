@@ -27,9 +27,17 @@ $(".saveBtn").on("click", function() {
   console.log("button pressed");
   //var todoItem = "test";
   var todoItem  = $(this).attr("data-time");
-  var textItem = $(this).attr("text");
+  var textItem = $(this).attr('input[type="text"]');
 
   localStorage.setItem(todoItem, textItem);  //should store input into the local stoarge.
+
+
+  // $('input[type="text"]').each(function(){    
+  //         var id = $(this).attr('id');
+  //         var value = $(this).val();
+  //        localStorage.setItem(id, value);
+    
+  //     });   
 
   
  // var movieName = $(this).attr("data-name");
