@@ -27,9 +27,19 @@ $(".saveBtn").on("click", function() {
   console.log("button pressed");
   //var todoItem = "test";
   var todoItem  = $(this).attr("data-time");
-  var textItem = $(this).attr('input[type="text"]');
+  console.log(todoItem);
+  var textItem = $("#" + todoItem).val();
+  console.log(textItem);
+  //var number = className.substr(6, className.length-6);
+  //var idText = "#text"+ todoItem;  //#text + 8 => #text8
+
+  //var textValue = $(idText).val(); 
+  //console.log(textValue);
+
 
   localStorage.setItem(todoItem, textItem);  //should store input into the local stoarge.
+
+  //try to add a data type to the input
 
 
   // $('input[type="text"]').each(function(){    
