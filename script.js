@@ -37,7 +37,7 @@ $(".saveBtn").on("click", function() {
   //console.log(textValue);
 
 
-  //localStorage.setItem(todoItem, textItem);  //should store input into the local stoarge.
+  localStorage.setItem(todoItem, textItem);  //should store input into the local stoarge.
 
   //try to add a data type to the input
 
