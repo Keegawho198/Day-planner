@@ -12,9 +12,23 @@ var m = moment(); //makes it easier to type this
 $("#date").html(m.format("dddd MMM Mo YYYY")); //sets the date using the Moment.js library
 
 
+//$("#test").text(m.format("hh:mm A"));
 $("#test").text(m.format("hh:mm A"));
-
 $(".time9").text(m.format("9", "hh:mm A") + "AM");
+
+
+// changeColor();
+
+// function changeColor(){
+//   if(m == m.hour(12)){
+//     $("#test").css("color", "red");
+//    // $("p").css("color", "red");
+//   }else if(m == 14){
+//     $("#test").css("color", "blue");
+//   }
+
+// }
+
 
 displayTasks();
 
@@ -73,7 +87,7 @@ function displayTasks(){
     for(var i=0; i<tasksFromLocalStorage.length; i++){
       var textItem = tasksFromLocalStorage[i];
 
-      $("#" + todoItem).append(textItem);
+     // $("#" + todoItem).append(textItem);
     }
   }
 
