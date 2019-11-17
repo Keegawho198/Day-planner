@@ -73,8 +73,7 @@ function displayTasks(){
     for(var i=0; i<tasksFromLocalStorage.length; i++){
       var textItem = tasksFromLocalStorage[i];
 
-      $("#9am").append(textItem);
-      console.log(textItem);
+      $("#" + todoItem).append(textItem);
     }
   }
 
