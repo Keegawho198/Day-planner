@@ -1,6 +1,6 @@
 //var timerElement = document.getElementById('timer');
 
-var savedTasks = [];
+
 
 var m = moment(); //makes it easier to type this 
 
@@ -12,6 +12,21 @@ var m = moment(); //makes it easier to type this
 $("#date").html(m.format("dddd MMM Mo YYYY")); //sets the date using the Moment.js library
 
 
+$("#test").text(m.format("hh:mm A"));
+
+$(".time9").text(m.format("9", "hh:mm A") + "AM");
+
+
+
+
+//console.log( moment('Mon 03-Jul-2017, 11:00 AM', 'ddd DD-MMM-YYYY, hh:mm A').format('hh:mm A') );
+
+
+
+//moment("Apr 4 05:06:07", "MMM DD hh:mm:ss");  // this year, 4th April, 05:06:07.000
+
+
+
 // var beginningTime = moment('8:45am', 'h:mma');
 // var endTime = moment('9:00am', 'h:mma');
 // console.log(beginningTime.isBefore(endTime)); // true
@@ -19,41 +34,55 @@ $("#date").html(m.format("dddd MMM Mo YYYY")); //sets the date using the Moment.
 // console.log(endTime.toDate()); // Mon May 12 2014 09:00:00
 
 
-var saveBtn = $("#saveBtn");
+//var saveBtn = $("#saveBtn"); //not doing anthing
 //saveBtn.append(newButton);
 
 //the following code makes sure that the save button is clicked
 $(".saveBtn").on("click", function() {
+  var savedTasks = [];
+
   console.log("button pressed");
   //var todoItem = "test";
   var todoItem  = $(this).attr("data-time");
   console.log(todoItem);
   var textItem = $("#" + todoItem).val();
-  console.log(textItem);
+  savedTasks.push(textItem);
+
+  console.log(savedTasks);
+  var storedTasks = localStorage.getItem("storedTasks");
+
+  if(storedTasks == null){
+    //this will take the first input and put it into the array since array is emtpy
+    localStorage.setItem("storedTasks", JSON.stringify(savedTasks));
+    $("#" + todoItem).val("");
+  }else{
+    //this will add other inputs inside the same array
+    storedTasks = JSON.parse(storedTasks);
+    storedTasks.push(textItem);
+    localStorage.setItem("storedTasks", JSON.stringify(storedTasks));
+    $("#" + todoItem).val("");
+  }
+
+ // console.log(textItem);
   //var number = className.substr(6, className.length-6);
   //var idText = "#text"+ todoItem;  //#text + 8 => #text8
 
   //var textValue = $(idText).val(); 
   //console.log(textValue);
-
-
   localStorage.setItem(todoItem, textItem);  //should store input into the local stoarge.
 
-  //try to add a data type to the input
-
-
-  // $('input[type="text"]').each(function(){    
-  //         var id = $(this).attr('id');
-  //         var value = $(this).val();
-  //        localStorage.setItem(id, value);
-    
-  //     });   
-
-  
- // var movieName = $(this).attr("data-name");
-
-
 });
+
+function displayTasks(){
+
+}
+
+
+
+
+
+
+
 
 //localStorage.setItem("Name", "Keegan");
 
