@@ -16,7 +16,7 @@ $("#test").text(m.format("hh:mm A"));
 
 $(".time9").text(m.format("9", "hh:mm A") + "AM");
 
-
+displayTasks();
 
 
 //console.log( moment('Mon 03-Jul-2017, 11:00 AM', 'ddd DD-MMM-YYYY, hh:mm A').format('hh:mm A') );
@@ -63,17 +63,20 @@ $(".saveBtn").on("click", function() {
     $("#" + todoItem).val("");
   }
 
- // console.log(textItem);
-  //var number = className.substr(6, className.length-6);
-  //var idText = "#text"+ todoItem;  //#text + 8 => #text8
-
-  //var textValue = $(idText).val(); 
-  //console.log(textValue);
-  localStorage.setItem(todoItem, textItem);  //should store input into the local stoarge.
-
+  localStorage.setItem(todoItem, textItem);  //should store input into the local stoarge. with time
+  displayTasks();
 });
 
 function displayTasks(){
+  var tasksFromLocalStorage = JSON.parse(localStorage.getItem("storedTasks"));
+  if(tasksFromLocalStorage != null){
+    for(var i=0; i<tasksFromLocalStorage.length; i++){
+      var textItem = tasksFromLocalStorage[i];
+
+      $("#9am").append(textItem);
+      console.log(textItem);
+    }
+  }
 
 }
 
