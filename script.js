@@ -72,6 +72,7 @@ $(".saveBtn").on("click", function() {
   }else{
     //this will add other inputs inside the same array
     storedTasks = JSON.parse(storedTasks);
+    console.log(storedTasks)
     storedTasks.push(textItem);
     localStorage.setItem("storedTasks", JSON.stringify(storedTasks));
     $("#" + todoItem).val("");
@@ -82,24 +83,37 @@ $(".saveBtn").on("click", function() {
 });
 
 function displayTasks(){
-  var tasksFromLocalStorage = JSON.parse(localStorage.getItem("storedTasks"));
-  if(tasksFromLocalStorage != null){
-    for(var i=0; i<tasksFromLocalStorage.length; i++){
-      var textItem = tasksFromLocalStorage[i];
+  // var tasksFromLocalStorage = JSON.parse(localStorage.getItem("storedTasks"));
+  var times = ['11am', '10am', "9am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"]
+  // if(tasksFromLocalStorage != null){
+    for(var i=0; i<times.length; i++){
+      var task = (localStorage.getItem(times[i]));
+      $("#"+times[i]).val(task)
+  //     var textItem = tasksFromLocalStorage[i];
 
-      var todoItem  = $(this).attr("data-time");
+  //     var todoItem  = $(this).attr("data-time");
       
-     // var textItem = $("#" + todoItem).val();
-     // savedTasks.push(textItem);
+  //    // var textItem = $("#" + todoItem).val();
+  //    // savedTasks.push(textItem);
+
+  //  //  var oldItems = JSON.parse(localStorage.getItem('savedTasks')) || [];
+  //    //tasksFromLocalStorage.push(textItem);
 
 
-      $("#" + todoItem).append(textItem);
+  //     $("#"+ i + todoItem).append(textItem);
+  //     console.log(textItem);
     }
-  }
+  // }
 
 }
 
+//when saving store todo item as key and textItem as value
+//when displaying, loop through all object(inside local storage array)
+//assign key and value to correct input
 
+//[{key:"9am", value:"work"},{key:"3pm", value:"leave work"}]
+
+//$(key).val(value);
 
 
 
