@@ -87,7 +87,13 @@ function displayTasks(){
     for(var i=0; i<tasksFromLocalStorage.length; i++){
       var textItem = tasksFromLocalStorage[i];
 
-     // $("#" + todoItem).append(textItem);
+      var todoItem  = $(this).attr("data-time");
+      
+     // var textItem = $("#" + todoItem).val();
+     // savedTasks.push(textItem);
+
+
+      $("#" + todoItem).append(textItem);
     }
   }
 
