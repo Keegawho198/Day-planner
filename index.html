@@ -5,125 +5,97 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="styles.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script defer src="script.js"></script>
-
-  <title>Day-Planner</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Work Day Scheduler</title>
 </head>
 
 <body>
-  <h1>Workday scheduler</h1>
-  <h4>Calender</h4>
-  <p id="date">Date here</p>
-  <p id="currentTime">Time here</p>
-  <hr class="new1">
-
+  <header class="jumbotron">
+    <h1 class="display-3">Work Day Scheduler</h1>
+    <p class="lead">A simple calendar app for scheduling your work day</p>
+    <p id="currentDay" class="lead"></p>
+  </header>
   <div class="container">
-    <div class="row 9am">
-      <div class="col-1">
-        9am
+    <div id="hour-9" class="row time-block">
+      <div class="col-md-1 hour">
+        9AM
       </div>
-      <!-- <div class="col-10 text-content"> -->
-      <input type="text" placeholder="What needs to be done?" name="todo-text" id="9am" class="col-10" />
-      <button class="col-1 save saveBtn" data-time="9am">
-        Save
-      </button>
+      <textarea class="col-md-10 description">
+      </textarea>
+      <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+    </div>
+    <div id="hour-10" class="row time-block">
+      <div class="col-md-1 hour">
+        10AM
+      </div>
+      <textarea class="col-md-10 description">
+      </textarea>
+      <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+    </div>
+    <div id="hour-11" class="row time-block">
+      <div class="col-md-1 hour">
+        11AM
+      </div>
+      <textarea class="col-md-10 description">
+      </textarea>
+      <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+    </div>
+    <div id="hour-12" class="row time-block">
+      <div class="col-md-1 hour">
+        12PM
+      </div>
+      <textarea class="col-md-10 description">
+      </textarea>
+      <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+    </div>
+   <div id="hour-13" class="row time-block">
+      <div class="col-md-1 hour">
+        1PM
+      </div>
+      <textarea class="col-md-10 description">
+      </textarea>
+      <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+    </div>
+    <div id="hour-14" class="row time-block">
+      <div class="col-md-1 hour">
+        2PM
+      </div>
+      <textarea class="col-md-10 description">
+      </textarea>
+      <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+    </div>
+    <div id="hour-15" class="row time-block">
+     <div class="col-md-1 hour">
+        3PM
+      </div>
+      <textarea class="col-md-10 description">
+      </textarea>
+      <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+    </div>
+    <div id="hour-16" class="row time-block">
+      <div class="col-md-1 hour">
+        4PM
+      </div>
+      <textarea class="col-md-10 description">
+      </textarea>
+      <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+    </div>
+    <div id="hour-17" class="row time-block">
+      <div class="col-md-1 hour">
+        5PM
+      </div>
+      <textarea class="col-md-10 description">
+      </textarea>
+      <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
     </div>
 
-    <div class="row 10am">
-      <div class="col-1">
-        10am
-      </div>
-      <input type="text" placeholder="What needs to be done?" name="todo-text" id="10am" class="col-10" />
-      <!-- <div class="col-10 text-content"> -->
-      <button class="col-1 save saveBtn" data-time="10am">
-        Save
-      </button>
-    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
-
-    <div class="row 11am">
-      <div class="col-1">
-        11am
-      </div>
-      <input type="text" placeholder="What needs to be done?" name="todo-text" id="11am" class="col-10" />
-      <button class="col-1 save saveBtn" data-time="11am">
-        Save
-      </button>
-    </div>
-
-
-    <div class="row 12pm">
-      <div class="col-1">
-        12pm
-      </div>
-      <input type="text" placeholder="What needs to be done?" name="todo-text" id="12pm" class="col-10" />
-      <button class="col-1 save saveBtn" data-time="12pm">
-        Save
-      </button>
-    </div>
-
-    <div class="row 1pm">
-      <div class="col-1">
-        1pm
-      </div>
-      <input type="text" placeholder="What needs to be done?" name="todo-text" id="1pm" class="col-10" />
-      <button class="col-1 save saveBtn" data-time="1pm">
-        Save
-      </button>
-    </div>
-
-    <div class="row 2pm">
-      <div class="col-1">
-        2pm
-      </div>
-      <input type="text" placeholder="What needs to be done?" name="todo-text" id="2pm" class="col-10" />
-      <button class="col-1 save saveBtn" data-time="2pm">
-        Save
-      </button>
-    </div>
-
-    <div class="row 3pm">
-      <div class="col-1">
-        3pm
-      </div>
-      <input type="text" placeholder="What needs to be done?" name="todo-text" id="3pm" class="col-10" />
-      <button class="col-1 save saveBtn" data-time="3pm">
-        Save
-      </button>
-    </div>
-
-    <div class="row 4pm">
-      <div class="col-1">
-        4pm
-      </div>
-      <input type="text" placeholder="What needs to be done?" name="todo-text" id="4pm" class="col-10" />
-      <button class="col-1 save saveBtn" data-time="4pm">
-        Save
-      </button>
-    </div>
-
-    <div class="row 5pm">
-      <div class="col-1">
-        5pm
-      </div>
-      <input type="text" placeholder="What needs to be done?" name="todo-text" id="5pm" class="col-10" />
-      <button class="col-1 save saveBtn" data-time="5pm">
-        Save
-      </button>
-    </div>
-  </div>
-
+    <script src="script.js"></script>
 </body>
-<script src="lib/moment/moment.min.js"></script>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </html>
