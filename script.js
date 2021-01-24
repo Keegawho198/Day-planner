@@ -9,12 +9,14 @@ var m = moment(); //makes it easier to type this
 
 //console.log(m.format("dddd MMM Mo YYYY"));
 
-$("#date").html(m.format("dddd MMM Mo YYYY")); //sets the date using the Moment.js library
+$("#date").html(m.format("dddd, Do MMM YYYY")); //sets the date using the Moment.js library
 
 
 //$("#test").text(m.format("hh:mm A"));
-$("#test").text(m.format("hh:mm A"));
-$(".time9").text(m.format("9", "hh:mm A") + "AM");
+$("#currentTime").text(m.format("hh:mm A"));
+
+
+//$(".time9").text(m.format("9", "hh:mm A") + "AM");
 
 
 // changeColor();
