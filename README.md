@@ -8,6 +8,7 @@ when you enter input into the inout section It will take that input into an arra
 
 color will be added in the future to represent the time of day, where red would be current time, grey would be time passed and green would be time in the future.
 
+Link to deployed code : https://keegawho198.github.io/Day-planner/
 
 
 ![Dayplanner](https://user-images.githubusercontent.com/53376077/99216806-b8da8c00-282a-11eb-910b-334e6826337b.JPG)
