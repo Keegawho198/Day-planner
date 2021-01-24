@@ -55,5 +55,6 @@ $(document).ready(function () {
 //   $("#date").html(m.format("dddd, Do MMM YYYY")); //sets the date using the Moment.js library
 
 // //$("#test").text(m.format("hh:mm A"));
-// $("#currentTime").text(m.format("hh:mm A"));
+  $("#currentTime").text(moment().format("hh:mm A"));
+
 });
